@@ -16,7 +16,8 @@ npm install
 npm run dev
 ```
 
-7. Open **http://localhost:5173**.
+7. Open **http://localhost:3000**.
+   Note:The local host address could vary based on different conditions.
 
 The contact form sends to **shariqofficial6@gmail.com** through the local `/api/contact` route and Resend. Provider errors are shown in the form instead of the generic message when Resend returns a useful error.
 
@@ -28,7 +29,7 @@ npm run build
 npm start
 ```
 
-Then open **http://localhost:4173**.
+Then open **http://localhost:3000**.
 
 ## Important security note
 
