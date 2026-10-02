@@ -9,26 +9,8 @@
   border-radius: 50%;
 }
 
-.hero-portrait,
-.hero-portrait::before,
-.portrait-glow,
-.work-badge,
-.work-badge span {
-  animation: none !important;
-}
-
-.outer-pulse {
-  display: none !important;
-  animation: none !important;
-}
-
 .profile-marker {
   z-index: 1;
-}
-
-.work-badge {
-  right: 0;
-  bottom: 23px;
 }
 
 .mobile-intro-extra,
@@ -124,10 +106,6 @@ button.scroll-cue:focus-visible {
     aspect-ratio: 1;
   }
 
-  .work-badge {
-    bottom: -43px;
-  }
-
 }
 
 @media (max-width: 767px) {
@@ -163,7 +141,6 @@ button.scroll-cue:focus-visible {
     background: transparent;
     box-shadow: none;
     backdrop-filter: none;
-    animation: none !important;
   }
 
   .floating-nav::after {
@@ -195,8 +172,11 @@ button.scroll-cue:focus-visible {
     min-height: 48px;
     padding: 12px 14px;
     font-size: 14px;
-    animation: none !important;
-    transform: none !important;
+  }
+
+  .floating-nav:hover .nav-menu,
+  .floating-nav:focus-within .nav-menu {
+    display: flex;
   }
 
   .hero {
@@ -292,29 +272,17 @@ button.scroll-cue:focus-visible {
     transform: translate(-50%, -50%);
   }
 
-  .work-badge {
-    bottom: -32px;
-  }
-
   .hero-portrait::before,
   .hero-portrait::after {
     width: 100%;
     height: auto;
     aspect-ratio: 1;
-    animation: none !important;
   }
 
   .portrait-ring {
     width: min(100%, 255px);
     height: auto;
     aspect-ratio: 1;
-  }
-
-  .portrait-glow,
-  .outer-pulse,
-  .profile-marker,
-  .orbit {
-    animation: none !important;
   }
 
   .portrait-glow {
@@ -335,18 +303,12 @@ button.scroll-cue:focus-visible {
     aspect-ratio: 1;
   }
 
-  .outer-pulse {
-    display: none;
-  }
-
   .work-badge {
     right: 0;
     bottom: -32px;
     max-width: calc(100% - 4px);
-    gap: 5px;
     padding: 5px 7px;
     font-size: 9px;
-    animation: none !important;
   }
 
   .scroll-cue {
@@ -356,7 +318,6 @@ button.scroll-cue:focus-visible {
     min-height: 48px;
     margin: 0 auto;
     transform: none;
-    animation: none !important;
     font-size: 10px;
   }
 
@@ -374,10 +335,6 @@ button.scroll-cue:focus-visible {
     font-size: clamp(2.5rem, 9vw, 3.25rem);
     line-height: 0.98;
     letter-spacing: -0.05em;
-  }
-
-  .section-title i {
-    animation: none !important;
   }
 
   .project-grid {
@@ -670,12 +627,6 @@ button.scroll-cue:focus-visible {
     overflow-wrap: anywhere;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }
 
 @media (max-width: 480px) {
@@ -771,4 +722,3 @@ button.scroll-cue:focus-visible {
     width: calc(100% - 24px);
   }
 }
-
