@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Navigate the animated personalized portfolio",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "floating navigation",
+      "resume-based projects",
+      "animated skills",
+      "GitHub link",
+      "LinkedIn link"
+    ],
+    "description": "Verifies the main portfolio navigation reaches the personalized sections and the updated social links are present.",
+    "steps": [
+      "Open the portfolio",
+      "Select Projects from the floating navigation",
+      "Select Skills",
+      "Select Experience",
+      "Select Contact"
+    ],
+    "expected": "Projects, Skills, Experience, and Contact scroll into view and the portfolio uses the personalized social destinations without an X link."
+  },
+  {
+    "name": "Verify portrait, subtle Open to Work motion, and scroll navigation",
+    "viewport": "desktop",
+    "covers": [
+      "fixed-size profile photo",
+      "subtle Open to Work animation",
+      "no circulating badge ball",
+      "mouse-follow animation",
+      "scroll-direction navigation"
+    ],
+    "description": "Verifies the supplied profile image is shown in a fixed circular frame while the Open to Work badge uses restrained motion and has no circulating decorative ball.",
+    "steps": [
+      "Open the portfolio at the top",
+      "Move the pointer across the profile image",
+      "Observe the Open to Work badge",
+      "Scroll down several sections",
+      "Scroll upward"
+    ],
+    "expected": "The profile image remains fixed in its circular frame, the Open to Work badge moves only subtly without a circulating ball, pointer effects respond, and navigation hides downward and returns upward."
+  },
+  {
+    "name": "Use the mobile menu and open the contact form",
+    "viewport": "mobile",
+    "covers": [
+      "responsive mobile navigation",
+      "mobile menu",
+      "in-page contact form",
+      "no Outlook mailto navigation"
+    ],
+    "description": "Verifies the mobile contact workflow opens an in-page message form instead of launching a desktop email application.",
+    "steps": [
+      "Open the site on a mobile viewport",
+      "Open the menu button",
+      "Select Contact",
+      "Tap Get in Touch"
+    ],
+    "expected": "The mobile menu opens, Contact is reached, and Get in Touch opens a message form inside the portfolio."
+  },
+  {
+    "name": "Validate the contact form before sending",
+    "viewport": "desktop",
+    "covers": [
+      "contact form validation",
+      "recipient confirmation",
+      "server-side Resend delivery",
+      "send message workflow"
+    ],
+    "description": "Verifies the contact modal contains required fields and clearly identifies the destination email before a message is submitted.",
+    "steps": [
+      "Open Get in Touch",
+      "Leave a required field empty",
+      "Attempt to submit the form",
+      "Enter a name, email, subject, and message"
+    ],
+    "expected": "The browser blocks an incomplete submission, the form identifies shariqofficial6@gmail.com as the recipient, and a complete form submits to the secure backend email route without opening Outlook."
+  },
+  {
+    "name": "Expand the resume project list",
+    "viewport": "desktop",
+    "covers": [
+      "project images",
+      "project expansion",
+      "resume project descriptions"
+    ],
+    "description": "Verifies project cards remain interactive and the Show All Projects control reveals all five resume-derived projects.",
+    "steps": [
+      "Open Projects",
+      "Confirm project cards show images and project tags",
+      "Click Show All Projects"
+    ],
+    "expected": "Project cards animate on hover and all five projects become visible."
+  }
+]
