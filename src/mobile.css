@@ -1,3 +1,18 @@
+@keyframes profileLevitateSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.hero-portrait,
+.hero-portrait.reveal.is-visible {
+  animation-name: profileLevitateSubtle;
+}
+
 .portrait-ring {
   overflow: visible;
   isolation: isolate;
@@ -350,40 +365,57 @@ button.scroll-cue:focus-visible {
   }
 
   .project-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .project-card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 0;
   }
 
   .project-image {
+    flex: 0 0 auto;
     height: auto;
     aspect-ratio: 16 / 10;
   }
 
   .project-content {
-    padding: 16px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 12px;
   }
 
   .project-content h3 {
-    font-size: clamp(17px, 4.8vw, 20px);
+    font-size: clamp(13px, 3.6vw, 16px);
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
 
   .project-content p {
+    flex: 1;
     min-height: 0;
-    margin: 10px 0 16px;
+    margin: 8px 0 12px;
     overflow: visible;
-    font-size: 14px;
-    line-height: 1.65;
+    font-size: clamp(10px, 2.8vw, 12px);
+    line-height: 1.5;
     overflow-wrap: anywhere;
   }
 
-  .live-btn,
+  .live-btn {
+    height: auto;
+    min-height: 38px;
+    margin-top: auto;
+    max-width: 100%;
+    padding: 7px 4px;
+    font-size: clamp(9px, 2.5vw, 11px);
+    gap: 4px;
+    touch-action: manipulation;
+  }
+
   .outline-pill {
     min-height: 48px;
     max-width: 100%;
@@ -680,7 +712,7 @@ button.scroll-cue:focus-visible {
   }
 
   .project-content {
-    padding: 15px;
+    padding: 10px;
   }
 
   .skill-chips {

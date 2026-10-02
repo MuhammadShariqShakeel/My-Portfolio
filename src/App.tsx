@@ -6,11 +6,11 @@ import {
 import { CheckCircle2 } from 'lucide-react';
 
 const projects = [
-  { title:'Hostel Management System', tag:'Java · OOP', description:'A console-based system for managing student records, room allocation, fee management, and complaint handling using Java and object-oriented programming principles.', image:'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=82' },
-  { title:'Typing Speed Test', tag:'C++ · Standard Library', description:'A typing test application that measures typing speed and accuracy in real time and calculates WPM and accuracy percentage.', image:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=82' },
-  { title:'Traffic Light Control System', tag:'C++ · OOP', description:'A traffic-light simulation designed with object-oriented programming to control intersection flow through timing and state transitions.', image:'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=82' },
-  { title:'Vending Machine using FSM', tag:'Digital Logic Design · FSM', description:'A vending machine system implemented with a finite state machine to manage idle, coin inserted, item selected, and dispensing states.', image:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=82' },
-  { title:'Medical Image Processing & TBI Dataset Curation', tag:'Internship · Python', description:'Worked with a CoSOD head CT dataset for Traumatic Brain Injury, including clinical parameter evaluation, region separation, DICOM metadata sorting, pydicom, OpenCV, pandas, and matplotlib.', image:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=82' },
+  { title:'Hostel Management System', tag:'Java · OOP', description:'A console-based system for managing student records, room allocation, fee management, and complaint handling using Java and object-oriented programming principles.', image:'/resources/projects/hostel-management.jpeg' },
+  { title:'Typing Speed Test', tag:'C++ · Standard Library', description:'A typing test application that measures typing speed and accuracy in real time and calculates WPM and accuracy percentage.', image:'/resources/projects/typing-speed-test.jpg' },
+  { title:'Traffic Light Control System', tag:'C++ · OOP', description:'A traffic-light simulation designed with object-oriented programming to control intersection flow through timing and state transitions.', image:'/resources/projects/traffic-light.jpeg' },
+  { title:'Vending Machine using FSM', tag:'Digital Logic Design · FSM', description:'A vending machine system implemented with a finite state machine to manage idle, coin inserted, item selected, and dispensing states.', image:'/resources/projects/vending-machine.jpeg' },
+  { title:'Medical Image Processing & TBI Dataset Curation', tag:'Internship · Python', description:'Worked with a CoSOD head CT dataset for Traumatic Brain Injury, including clinical parameter evaluation, region separation, DICOM metadata sorting, pydicom, OpenCV, pandas, and matplotlib.', image:'/resources/projects/medical-image-processing.jpg' },
 ];
 const skillGroups = [
   { title:'PROGRAMMING', items:[
@@ -48,7 +48,7 @@ function App(){
   useEffect(()=>{if(!contactOpen)return;const onKey=(event:KeyboardEvent)=>{if(event.key==='Escape')setContactOpen(false)};document.addEventListener('keydown',onKey);document.body.style.overflow='hidden';return()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow='';};},[contactOpen]);
   const go=(id:string)=>{setMenuOpen(false);document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});};
   const openContact=()=>{setContactStatus('idle');setContactError('');setContactOpen(true);};
-  const visibleProjects=showAll?projects:projects.slice(0,3);
+  const visibleProjects=showAll?projects:projects.slice(0,4);
   const handleContactSubmit=async(event:FormEvent<HTMLFormElement>)=>{event.preventDefault();setContactStatus('sending');setContactError('');const form=event.currentTarget,formData=new FormData(form);const payload={name:String(formData.get('name')||''),email:String(formData.get('email')||''),subject:String(formData.get('subject')||''),message:String(formData.get('message')||'')};try{const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const responseText=await response.text();let data:{error?:string;message?:string}={};try{data=JSON.parse(responseText)}catch{}if(!response.ok)throw new Error(data.error||data.message||responseText||`Request failed with status ${response.status}.`);setContactStatus('sent');form.reset();}catch(err){setContactError(err instanceof Error?err.message:'Something went wrong while sending. Please try again.');setContactStatus('error');}};
   return <div className="site">
     <div ref={cursorTrail} className="cursor-trail" aria-hidden="true"/><div className="ambient ambient-one" aria-hidden="true"/><div className="ambient ambient-two" aria-hidden="true"/>
